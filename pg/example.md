@@ -2,6 +2,7 @@
 ## 使用举例
 向test.tb_order中插入数据，创建物化视图, 分区表
 
+### 基本操作
 ``` shell
 # 连接pg
 sudo -u postgres psql
@@ -15,8 +16,10 @@ create database test;
 # 切换数据库use test;
 \c test
 
-#  查看所表表
+#  查看所有表
 \d
 
 
 ```
+
+### 建表
