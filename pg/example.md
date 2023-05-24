@@ -77,6 +77,17 @@ CREATE TABLE tb_order_202305 PARTITION OF tb_order FOR VALUES FROM ('2023-05-01'
 CREATE TABLE tb_order_202304 PARTITION OF tb_order FOR VALUES FROM ('2023-04-01') TO ('2023-05-01');
 ```
 
+### 插入数据
+```sql
+# testpg.php生成的sql
+
+insert into tb_order(order_no,third_order_no,user_id,inviter_id,shop_id,goods_id,goods_cate_id,goods_name,price,amount,total_price,coupon_id,coupon_amount,coupon_name,pay_channel,created_time,status,user_remark,order_month,freight_charge,pay_amount,pay_order_no,address_id,pay_time,updated_time,send_out_time,finished_time)values('202305241223525251379','202305241223521675588','38232','38232','3242','54947','549','goodsName54947','54.947','1','54.947','19309','4','优惠劵19309','4','2023-05-11 12:23:52','6','用户备注382328544','202305','30','80.947','P217110254','68232','2023-05-11 12:28:04','2023-05-11 18:38:41','2023-05-11 18:38:41','2023-05-12 17:41:05');
+insert into tb_order(order_no,third_order_no,user_id,inviter_id,shop_id,goods_id,goods_cate_id,goods_name,price,amount,total_price,coupon_id,coupon_amount,coupon_name,pay_channel,created_time,status,user_remark,order_month,freight_charge,pay_amount,pay_order_no,address_id,pay_time,updated_time)values('202305241223528373480','202305241223525105057','23751','23751','3448','38149','381','goodsName38149','38.149','4','152.596','87470','8','优惠劵87470','3','2023-04-29 12:23:52','3','用户备注237512640','202304','50','194.596','P342032765','53751','2023-04-29 12:25:21','2023-04-29 12:25:21');
+insert into tb_order(order_no,third_order_no,user_id,inviter_id,shop_id,goods_id,goods_cate_id,goods_name,price,amount,total_price,coupon_id,coupon_amount,coupon_name,pay_channel,created_time,status,user_remark,order_month,freight_charge,pay_amount,pay_order_no,address_id,pay_time,updated_time,send_out_time,finished_time)values('202305241223523661681','202305241223529589558','56910','12466','3601','52161','521','goodsName52161','52.161','1','52.161','17532','0','优惠劵17532','1','2023-05-21 12:23:52','6','用户备注569107376','202305','20','72.161','P850662710','86910','2023-05-21 12:24:24','2023-05-22 07:16:19','2023-05-22 07:16:19','2023-05-23 00:18:24');
+insert into tb_order(order_no,third_order_no,user_id,inviter_id,shop_id,goods_id,goods_cate_id,goods_name,price,amount,total_price,coupon_id,coupon_amount,coupon_name,pay_channel,created_time,status,user_remark,order_month,freight_charge,pay_amount,pay_order_no,address_id,pay_time,updated_time,send_out_time,finished_time)values('202305241223528809476','202305241223522910983','67498','23054','1036','45072','450','goodsName45072','45.072','9','405.648','58741','7','优惠劵58741','4','2023-04-27 12:23:52','6','用户备注674987724','202304','20','418.648','P865931485','97498','2023-04-27 12:28:49','2023-04-28 10:56:45','2023-04-28 10:56:45','2023-04-28 21:41:56');
+```
+
+
 ### 创建物化视图
 
 ```sql
