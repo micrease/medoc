@@ -20,7 +20,6 @@ create database test;
 \d
 
 ```
-
 ### 创建主表
 https://blog.csdn.net/weixin_42583514/article/details/123063420
 
@@ -91,10 +90,19 @@ CREATE MATERIALIZED VIEW tb_order_view AS select order_month,user_id,count(*) as
 refresh materialized view  tb_order_view;
 ```
 
+### 无锁刷新物化视图
+```sql
+#首先需要创建一个唯一索引
+CREATE UNIQUE INDEX idx_unique ON tb_order_view (order_month,user_id);
+
+#刷新物化视图
+refresh materialized VIEW concurrently tb_order_view;
+```
+
 ### 分析查询
 ```sql
 EXPLAIN ANALYZE select count(*) from tb_order;
 
-select count(*),sum(amount) from tb_order;
-select sum(count),sum(amount),count(*) from tb_order_view;
+# select count(*),sum(amount) from tb_order;
+# select sum(count),sum(amount),count(*) from tb_order_view;
 ```
