@@ -64,3 +64,9 @@ sudo docker run -p 9030:9030 -p 8030:8030 -p 8040:8040 \
 #登录
 mysql -P9030 -h127.0.0.1 -uroot
 ```
+
+## minio windows
+```shell
+PS> Invoke-WebRequest -i "https://dl.minio.org.cn/server/minio/release/windows-amd64/minio.exe" -OutFile "C:\minio.exe"
+PS> C:\minio.exe server E:\minio_data --console-address ":9001"
+```
